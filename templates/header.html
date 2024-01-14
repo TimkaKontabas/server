@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="logo">
+        <a href="/">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+        </a>
+    </div>
+    <div class="title">
+        <h1>Сеть почтовых отделений мистера Тима</h1>
+        {% include 'nav.html' %}
+    </div>
+    <div class="search">
+        <input type="text"> <button>Поиск</button>
+    </div>	
+</header>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <title>Таблица</title>
+</head>
+<body>
+
+{% include 'header.html' %}
+
+{% include 'select_table.html' %}
+
+<h1>Таблица</h1>
+
+<table id="table"></table>
+
+{% include 'footer.html' %}
+<script src="{{ url_for('static', filename='js/getTableData.js') }}"></script>
+</body>
+</html>

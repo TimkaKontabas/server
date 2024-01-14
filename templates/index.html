@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Курсовая</title>
+</head>
+<body>
+	<div class="page">
+		{% include 'header.html' %}
+		
+		<div class="main">
+			<div class="content">
+				{% for post in POSTS %}
+					<h4>{{ post.title }}</h4>
+					<p>{{ post.text }}</p>
+				{% endfor %}
+			</div>
+			<div class="sidebar">
+				<div class="news">
+				  <h2>Новости</h2>
+				  {% for news_item in NEWS %}
+					<a href="{{ news_item.link }}">
+					  <div class="news-item">
+						<h4>{{ news_item.title }}</h4>
+						<p>{{ news_item.text }}</p>
+					  </div>
+					</a>
+				  {% endfor %}
+				</div>
+			</div>
+		</div>
+
+		{% include 'footer.html' %}
+	</div>
+</body>
+</html>

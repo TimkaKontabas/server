@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница с новостями</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    {% include('header.html') %}
+
+    <h1>Новости</h1>
+
+    <div class="news-list">
+        {% for news in NEWS %}
+        <div class="news-item">
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.text }}</p>
+            <a href="{{ news.link }}">Подробнее</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% include('footer.html') %}
+</body>
+</html>
